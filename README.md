@@ -1,6 +1,6 @@
 # SalaryCalc
 
-TODO: Write a gem description
+A very simple salary calculator.
 
 ## Installation
 
@@ -18,7 +18,42 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Calculating based on an hourly rate, and default 8 billable hours:
+
+```ruby
+    require 'salary_calc'
+
+    calculator = SalaryCalc::Calculator.new(15)
+    calculator.to_daily   #=> 120
+    calculator.to_weekly  #=> 600
+    calculator.to_monthly #=> 2400
+    calculator.to_yearly  #=> 28800
+```
+
+Specify billable hours:
+
+```ruby
+   calculator = SalaryCalc::Calculator.new(15, 6)
+   calculator.to_daily = 90
+```
+
+Getting the hourly rate for a specific amount different that hourly rate:
+
+```ruby
+  calculator = SalaryCalc::Calculator.new(15)
+  calculator.from_yearly(2500)
+```
+
+Getting and setting the hourly rate to amount inside the calculator:
+
+```ruby
+  calculator = SalaryCalc::Calculator.new(2400)
+  calculator.amount #=> 2400
+  calculator.from_monthly!
+  calculator.amount #=> 15
+```
+
+Take a look at the tests for more use cases. ;)
 
 ## Contributing
 
