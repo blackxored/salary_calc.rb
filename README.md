@@ -1,5 +1,7 @@
 # SalaryCalc
 
+[![Gem Version](https://badge.fury.io/rb/salary_calc.png)](http://badge.fury.io/rb/salary_calc) [![Build Status](https://travis-ci.org/blackxored/salary_calc.rb.png)](https://travis-ci.org/blackxored/salary-calc.rb) [![Coverage Status](https://coveralls.io/repos/blackxored/salary_calc.rb/badge.png?branch=master)](https://coveralls.io/r/blackxored/salary_calc.rb)
+
 A very simple salary calculator.
 
 ## Installation
