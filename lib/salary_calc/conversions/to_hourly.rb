@@ -1,19 +1,20 @@
 module SalaryCalc::Conversions
   module ToHourly
     def from_yearly(yearly)
-      from_monthly(yearly.to_f / 12)
+      rounded(yearly.to_f / 52 / (billable_hours * 5))
     end
 
     def from_monthly(monthly)
-      from_weekly(monthly.to_f / 4)
+      binding.pry
+      rounded(monthly.to_f * 12 / 52 / (billable_hours * 5))
     end
 
     def from_weekly(weekly)
-      from_daily(weekly.to_f / 5)
+      rounded(weekly.to_f / (billable_hours * 5))
     end
 
     def from_daily(daily)
-      daily / billable_hours.to_f
+      rounded(daily.to_f / billable_hours)
     end
 
     [:yearly, :monthly, :weekly, :daily].each do |period|

@@ -16,5 +16,9 @@ module SalaryCalc
     def to_hourly
       amount
     end
+
+    def rounded(result)
+      result.round(2)
+    end
   end
 end
