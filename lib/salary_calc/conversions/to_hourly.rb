@@ -5,7 +5,6 @@ module SalaryCalc::Conversions
     end
 
     def from_monthly(monthly)
-      binding.pry
       rounded(monthly.to_f * 12 / 52 / (billable_hours * 5))
     end
 
